@@ -14,7 +14,7 @@ riconosciuti e scrivi i metadati nei PDF con un click.
 ## Funzioni
 
 - Interfaccia grafica leggera basata su `tkinter`.
-- Selezione di una cartella dal Finder.
+- Selezione di una cartella dalla finestra di sistema.
 - Lettura automatica dei PDF e dei CBR presenti nella cartella scelta.
 - Anteprima di titolo, autore, anno, serie e numero.
 - Impostazione di una serie comune per tutti i fumetti della cartella.
@@ -22,7 +22,7 @@ riconosciuti e scrivi i metadati nei PDF con un click.
 - Conversione dei fumetti `.cbr` in PDF.
 - Scrittura dei metadati PDF con `pypdf`.
 - Backup opzionale dei file originali in formato `.bak`.
-- Avvio su macOS con doppio click.
+- Avvio su macOS e Windows con doppio click.
 
 ## Avvio Rapido
 
@@ -32,14 +32,20 @@ Su macOS puoi aprire l'app con un doppio click su:
 Avvia Comic Tag Editor.command
 ```
 
+Su Windows puoi aprire l'app con un doppio click su:
+
+```text
+Avvia Comic Tag Editor.bat
+```
+
 Al primo avvio il lanciatore crea automaticamente un ambiente Python locale
-nella cartella `.venv` e installa le dipendenze necessarie. Dopo l'avvio
-dell'interfaccia grafica, la finestra del Terminale viene chiusa
+nella cartella `.venv` e installa le dipendenze necessarie. Su macOS, dopo
+l'avvio dell'interfaccia grafica, la finestra del Terminale viene chiusa
 automaticamente.
 
 ## Uso
 
-1. Apri `Avvia Comic Tag Editor.command`.
+1. Apri `Avvia Comic Tag Editor.command` su macOS oppure `Avvia Comic Tag Editor.bat` su Windows.
 2. Premi **Scegli cartella**.
 3. Seleziona la cartella che contiene i tuoi fumetti in PDF.
 4. Controlla o modifica il campo **Serie per Kobo**.
@@ -156,6 +162,15 @@ pip install -r requirements.txt
 python3 comic_tag_editor.py
 ```
 
+Su Windows, da Prompt dei comandi:
+
+```bat
+py -3 -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+python comic_tag_editor.py
+```
+
 ## Requisiti
 
 - macOS, Windows o Linux con Python 3.
@@ -181,6 +196,7 @@ un backup precedente.
 ```text
 comic-tag-editor/
 |-- Avvia Comic Tag Editor.command
+|-- Avvia Comic Tag Editor.bat
 |-- comic_tag_editor.py
 |-- logo.png
 |-- README.md
